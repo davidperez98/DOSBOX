@@ -1,0 +1,41 @@
+﻿Wiimote1.Led1 = true
+var.deady = 20
+var.deadx = 20
+var.x = Wiimote.Roll
+var.y = Wiimote.Pitch
+var.xx = var.x/45
+var.yy = var.y/45
+var.x1 = Abs(Wiimote.Roll)
+var.y1 = Abs(Wiimote.Pitch)
+
+
+if var.x1 < var.deadx
+var.xx = 0
+end if
+
+if var.y1 < var.deady
+var.yy = 0
+end if
+
+PPjoy.Digital0 = Wiimote.A
+PPjoy.Digital1 = Wiimote.B
+PPjoy.Digital2 = Wiimote.One
+PPjoy.Digital3 = Wiimote.Two
+PPjoy.Digital4 = Wiimote.Up
+PPjoy.Digital5 = Wiimote.Down
+PPjoy.Digital6 = Wiimote.Left
+PPjoy.Digital7 = Wiimote.Right
+PPjoy.Digital8 = Wiimote.Minus
+PPjoy.Digital9 = Wiimote.Plus
+PPjoy.Digital10 = Nunchuck.C
+PPjoy.Digital11 = NUnchuck.Z
+PPjoy.Digital15 = Wiimote.Home
+
+
+PPjoy.Analog0 = Nunchuck.JoyX
+PPjoy.Analog1 = Nunchuck.JoyY
+PPjoy.Analog2 = var.xx
+PPjoy.Analog3 = var.yy
+
+
+

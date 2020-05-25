@@ -1,0 +1,57 @@
+﻿Wiimote1.Led1 = true
+Wiimote2.Led2 = True
+var.deady = 0
+var.deadx = 0
+var.deady2 = 2
+var.deadx2 = 2
+var.x = Wiimote1.Roll
+var.y = Wiimote1.Pitch
+var.x2 = Wiimote2.Roll
+var.y2 = Wiimote2.Pitch
+var.xx = var.x/130
+var.yy = var.y/90
+var.xx2 = var.x2/90
+var.yy2 = var.y2/45
+var.x1 = Abs(Wiimote1.Roll)
+var.y1 = Abs(Wiimote1.Pitch)
+var.x12 = Abs(Wiimote2.Roll)
+var.y12 = Abs(Wiimote2.Pitch)
+
+if var.x1 < var.deadx
+var.xx = 0
+end if
+
+if var.y1 < var.deady
+var.yy = 0
+end if
+
+if var.x12 < var.deadx2
+var.xx2 = 0
+end if
+
+if var.y12 < var.deady2
+var.yy2 = 0
+end if
+
+PPjoy.Digital0 = Wiimote2.Up
+PPjoy.Digital1 = Wiimote2.Down
+PPjoy.Digital2 = Wiimote2.Left
+PPjoy.Digital3 = Wiimote2.Right
+PPjoy.Digital7 = Wiimote1.Up
+PPjoy.Digital4 = Wiimote1.Down
+PPjoy.Digital6 = Wiimote1.Left
+PPjoy.Digital5 = Wiimote1.Right
+PPjoy.Digital8 = Wiimote2.A
+PPjoy.Digital9 = Wiimote1.A
+PPjoy.Digital10 = Wiimote2.Home
+PPjoy.Digital11 = Wiimote1.Home
+PPjoy.Digital12 = Wiimote2.Minus
+PPjoy.Digital13 = Wiimote1.Plus
+PPjoy.Digital14 = Wiimote2.B
+PPjoy.Digital15 = Wiimote1.B
+
+
+PPjoy.Analog0 = var.xx2
+PPjoy.Analog1 = var.yy2
+PPjoy.Analog2 = var.xx
+PPjoy.Analog3 = var.yy

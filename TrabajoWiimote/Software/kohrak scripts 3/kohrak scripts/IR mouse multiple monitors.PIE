@@ -1,0 +1,22 @@
+﻿Wiimote1.Led1 = true
+var.x = Wiimote.PointerX
+var.y = Wiimote.PointerY
+if Wiimote1.PointerVisible
+Mouse.VirtualDesktopX = Smooth(Wiimote.PointerX, 20)
+Mouse.VirtualDesktopY = Smooth(Wiimote.PointerY, 20)
+Mouse.RightButton = Wiimote.A
+Mouse.LeftButton = Wiimote.B
+end if
+if Wiimote.Exists
+   Wiimote.Led1 = true;
+   Keyboard.Windows = Wiimote.Home
+   Keyboard.Alt+Keyboard.F4 = Wiimote.One
+   Keyboard.Ctrl+Keyboard.NumpadPlus = Wiimote.Plus
+   Keyboard.Ctrl+Keyboard.NumpadMinus = Wiimote.Minus
+   Keyboard.Up = Wiimote.Up
+   Keyboard.Down = Wiimote.Down
+   Keyboard.Left = Wiimote.Left
+   Keyboard.Right = Wiimote.Right
+   ExitPie = Wiimote.Two
+end if
+

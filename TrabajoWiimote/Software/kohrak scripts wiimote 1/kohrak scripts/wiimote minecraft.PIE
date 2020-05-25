@@ -1,0 +1,64 @@
+﻿Wiimote1.Led1 = true
+var.deady = 10
+var.deadx = 10
+var.x = Wiimote.Roll
+var.y = Wiimote.Pitch
+var.xx = var.x/90
+var.yy = var.y/45
+var.x1 = Abs(Wiimote.Roll)
+var.y1 = Abs(Wiimote.Pitch)
+var.mx = Mouse.DirectInputX
+var.my = Mouse.DirectInputY
+
+
+if var.x1 < var.deadx
+var.xx = 0
+end if
+
+if var.y1 < var.deady
+var.yy = 0
+end if
+// Mouse//
+
+PPjoy.Analog0 = var.xx
+PPjoy.Analog1 = var.yy
+Mouse.DirectInputX = Mouse.DirectInputX + 20*PPjoy.Analog1
+Mouse.DirectInputY = Mouse.DirectInputY + 20*PPjoy.Analog0
+
+//Configuración de botones//
+
+Mouse.LeftButton = Wiimote.One
+Mouse.RightButton = Wiimote.Two
+
+Mouse.WheelUp = Wiimote.Plus
+Mouse.WheelDown = Wiimote.Minus
+
+Key.E = Wiimote.Home
+
+Key.Space = Wiimote.B
+
+Key.LeftShift = Wiimote.A
+
+Key.W = Wiimote.Right
+Key.S = Wiimote.Left
+Key.A = Wiimote.Up
+Key.D = Wiimote.Down
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

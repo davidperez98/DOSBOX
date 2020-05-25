@@ -1,0 +1,34 @@
+﻿var.x = MapRange(Wiimote.Roll, -90 degrees, 90 degrees, 0, 1)
+var.y = MapRange(Wiimote.Pitch, 45 degrees, -45 degrees, 0, 1)
+if var.x > 1
+var.x = 1
+end if
+if var.x < 0
+var.x = 0
+end if
+if var.y > 1
+var.y = 1
+end if
+if var.y < 0
+var.y = 0
+end if
+if Wiimote.Down and Wiimote.Pitch < 70
+Mouse.VirtualDesktopX = Smooth(var.x, 10)
+Mouse.VirtualDesktopY = Smooth(var.y, 10)
+end if
+Mouse.LeftButton = Wiimote.B
+Mouse.RightButton = Wiimote.A
+if Wiimote.Pitch > 70
+Keyboard.Up = Wiimote.Up
+Keyboard.Down = Wiimote.Down
+Keyboard.Left = Wiimote.Left
+Keyboard.Right = Wiimote.Right
+end if
+if Wiimote.Exists
+   Wiimote.Led1 = true;
+   Keyboard.Windows = Wiimote.Home
+   Keyboard.Alt+Keyboard.F4 = Wiimote.One
+   Keyboard.Ctrl+Keyboard.NumpadPlus = Wiimote.Plus
+   Keyboard.Ctrl+Keyboard.NumpadMinus = Wiimote.Minus
+   ExitPie = Wiimote.Two
+end if

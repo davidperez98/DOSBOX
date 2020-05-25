@@ -1,0 +1,63 @@
+﻿var.x = Nunchuck.JoyX
+var.y = Nunchuck.JoyY
+var.x1 = Abs(var.x)
+var.y1 = Abs(var.y)
+var.xy1 = (var.x1 + var.y1)/2
+var.mx = 0
+var.my = 0
+if (var.x1 > 0,08 and var.x1 <= 0,2) or (var.y1 > 0,08 and var.y1 <= 0,2) or (var.xy1 > 0,7 and var.xy1 <= 0,085)
+   if var.x1 < 0,08 and var.y1 > 0,08
+   var.x = 0
+   end if
+   if var.y1 < 0,08 and var.x1 > 0,08
+   var.y = 0
+   end if
+var.mx = var.x
+var.my = var.y
+end if
+if (var.x1 > 0,2 and var.x1 <= 0,9) or (var.y1 > 0,2 and var.y1 <= 0,9) or (var.xy1 > 0,085 and var.xy1 <= 0,65)
+   if var.x1 < 0,2 and var.y1 > 0,2
+   var.x = 0
+   end if
+   if var.y1 < 0,2 and var.x1 > 0,2
+   var.y = 0
+   end if
+var.mx = 20*var.x
+var.my = 20*var.y
+end if
+if (var.x1 > 0,9 and var.x1 <= 1) or (var.y1 > 0,9 and var.y1 <= 1) or (var.xy1 > 0,65)
+   if var.x1 < 0,9 and var.y1 > 0,9
+   var.x = 0
+   end if
+   if var.y1 < 0,9 and var.x1 > 0,9
+   var.y = 0
+   end if
+var.mx = 40*var.x
+var.my = 40*var.y
+end if
+if Nunchuck.Exists
+Mouse.DirectInputX = Mouse.DirectInputX + var.mx
+Mouse.DirectInputY = Mouse.DirectInputY + var.my
+Mouse.LeftButton = Nunchuk.C
+Mouse.RightButton = Nunchuk.Z
+end if
+if Wiimote.Exists
+   Wiimote.Led1 = true;
+   Keyboard.Windows = Wiimote.Home
+   Keyboard.Alt+Keyboard.F4 = Wiimote.One
+   ExitPie = Wiimote.Two
+   Keyboard.Ctrl+Keyboard.NumpadPlus = Wiimote.Plus
+   Keyboard.Ctrl+Keyboard.NumpadMinus = Wiimote.Minus
+   Keyboard.Up = Wiimote.Up
+   Keyboard.Down = Wiimote.Down
+   Keyboard.Left = Wiimote.Left
+   Keyboard.Right = Wiimote.Right
+   Keyboard.Space = Wiimote.B
+   Keyboard.Escape = Wiimote.A
+end if
+
+
+
+
+
+
